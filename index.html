@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תיק עבודות | עריכת וידאו</title>
+    <style>
+        :root {
+            --bg-color: #0f0f11;
+            --card-bg: #1a1a1e;
+            --text-color: #ffffff;
+            --text-muted: #a0a0a5;
+            --accent-color: #3b82f6; /* כחול מקצועי, אפשר להחליף לכל צבע */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 2rem 1rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.05em;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* רשת הסרטונים */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .video-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 177.77%; /* יחס 9:16 לרילסים/שורטס. לסרטון לרוחב שנו ל-56.25% */
+            height: 0;
+            background: #000;
+        }
+
+        /* סרטונים לרוחב (כמו וידאו חברה או פודקאסט מלא) */
+        .video-wrapper.landscape {
+            padding-bottom: 56.25%; /* יחס 16:9 */
+        }
+
+        .video-wrapper iframe, .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1.25rem;
+        }
+
+        .video-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .video-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            border-top: 1px solid #2a2a30;
+            padding-top: 2rem;
+            color: var(--text-muted);
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            .video-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>תיק עבודות עריכה</h1>
+            <p>פרויקטים נבחרים | סושיאל, שורט-פורם ופודקאסטים</p>
+        </header>
+
+        <main class="video-grid">
+
+            <div class="video-card">
+                <div class="video-wrapper landscape">
+                    <iframe src="LINK_TO_VIDEO_1" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Ad Campaign - Yuvalim Group</h3>
+                    <p>עריכת וידאו מסחרית, שילוב בי-רולים ומקצב דינמי.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="LINK_TO_VIDEO_2" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Short-Form Q&A</h3>
+                    <p>עריכת שורט-פורם מהירה, כתוביות מעוצבות ואפקטים קוליים.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="LINK_TO_VIDEO_3" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Podcast Highlight Clip</h3>
+                    <p>חיתוך רגע שיא מתוך פודקאסט, זומים דינמיים ואנימציית טקסט קלה.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="LINK_TO_VIDEO_4" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Fitness Studio Workout Tips</h3>
+                    <p>עריכת קליפ קצבי עם אפקטים ומעברים מהירים.</p>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <p>אהבת את מה שראית? בואו נדבר על הפרויקט שלכם.</p>
+            <a href="https://wa.me/972XXXXXXXXX" class="contact-btn">שליחת הודעה בוואטסאפ</a>
+        </main>
+    </div>
+
+</body>
+</html>
