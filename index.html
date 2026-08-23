@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תיק עבודות | עריכת וידאו</title>
+    <title>Video Editor & Social Media Content Specialist</title>
     <style>
         :root {
-            --bg-color: #0f0f11;
-            --card-bg: #1a1a1e;
-            --text-color: #ffffff;
-            --text-muted: #a0a0a5;
-            --accent-color: #3b82f6; /* כחול מקצועי, אפשר להחליף לכל צבע */
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
+            --text-main: #ffffff;
+            --text-muted: #c5c6c7;
+            --accent: #66fcf1;
+            --tag-bg: rgba(102, 252, 241, 0.15);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
-            padding: 2rem 1rem;
-            line-height: 1.5;
+            color: var(--text-main);
+            padding: 3rem 1rem;
+            line-height: 1.6;
         }
 
         .container {
@@ -34,54 +35,55 @@
 
         header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            letter-spacing: -0.05em;
+            letter-spacing: -0.5px;
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto;
         }
 
-        /* רשת הסרטונים */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            align-items: start;
             margin-bottom: 4rem;
         }
 
         .video-card {
             background-color: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            transition: transform 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            flex-direction: column;
         }
 
-        .video-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 177.77%; /* יחס 9:16 לרילסים/שורטס. לסרטון לרוחב שנו ל-56.25% */
-            height: 0;
+        .video-content {
+            display: flex;
+            justify-content: center;
             background: #000;
+            min-height: 480px;
         }
 
-        /* סרטונים לרוחב (כמו וידאו חברה או פודקאסט מלא) */
-        .video-wrapper.landscape {
-            padding-bottom: 56.25%; /* יחס 16:9 */
+        .video-wrapper-drive {
+            position: relative;
+            width: 100%;
+            padding-bottom: 177.77%; /* 9:16 vertical */
+            height: 0;
         }
 
-        .video-wrapper iframe, .video-wrapper video {
+        .video-wrapper-drive iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -90,37 +92,48 @@
             border: none;
         }
 
-        .video-info {
+        .card-details {
             padding: 1.25rem;
         }
 
-        .video-info h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+        .stats-badge {
+            display: inline-block;
+            background-color: var(--tag-bg);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            margin-bottom: 0.75rem;
         }
 
-        .video-info p {
+        .card-details h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .card-details p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         footer {
             text-align: center;
-            border-top: 1px solid #2a2a30;
-            padding-top: 2rem;
-            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 3rem;
+            margin-top: 2rem;
         }
 
         .contact-btn {
             display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
+            background-color: var(--accent);
+            color: #0b0c10;
             text-decoration: none;
-            padding: 0.75rem 2rem;
+            padding: 0.85rem 2.2rem;
             border-radius: 50px;
-            font-weight: 600;
-            margin-top: 1rem;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 1.2rem;
             transition: opacity 0.2s;
         }
 
@@ -129,7 +142,7 @@
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 2rem; }
+            header h1 { font-size: 2.2rem; }
             .video-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -138,59 +151,84 @@
 
     <div class="container">
         <header>
-            <h1>תיק עבודות עריכה</h1>
-            <p>פרויקטים נבחרים | סושיאל, שורט-פורם ופודקאסטים</p>
+            <h1>Video Editor & Content Specialist</h1>
+            <p>Short-Form Video Editing | High-Retention Reels, TikToks & Podcasts</p>
         </header>
 
         <main class="video-grid">
 
+            <!-- Video 1: 80K Views -->
             <div class="video-card">
-                <div class="video-wrapper landscape">
-                    <iframe src="LINK_TO_VIDEO_1" allowfullscreen></iframe>
+                <div class="video-content">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbaG7c7MUxs/" data-instgrm-version="14" style="width: 100%; min-width: 100%; margin: 0 !important;"></blockquote>
                 </div>
-                <div class="video-info">
-                    <h3>Ad Campaign - Yuvalim Group</h3>
-                    <p>עריכת וידאו מסחרית, שילוב בי-רולים ומקצב דינמי.</p>
+                <div class="card-details">
+                    <span class="stats-badge">🔥 80K+ Views</span>
+                    <h3>Viral Short-Form Content</h3>
+                    <p>Fast-paced pacing, strong opening hooks, and high viewer retention.</p>
                 </div>
             </div>
 
+            <!-- Video 2: High Engagement -->
             <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="LINK_TO_VIDEO_2" allowfullscreen></iframe>
+                <div class="video-content">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQHTUxtCNID/" data-instgrm-version="14" style="width: 100%; min-width: 100%; margin: 0 !important;"></blockquote>
                 </div>
-                <div class="video-info">
-                    <h3>Short-Form Q&A</h3>
-                    <p>עריכת שורט-פורם מהירה, כתוביות מעוצבות ואפקטים קוליים.</p>
+                <div class="card-details">
+                    <span class="stats-badge">💬 1,480+ Likes | 1,400+ Comments</span>
+                    <h3>High-Engagement Reel</h3>
+                    <p>Strategic messaging, dynamic visual cutaways, and tailored sound design.</p>
                 </div>
             </div>
 
+            <!-- Video 3: Food / Reaction Video -->
             <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="LINK_TO_VIDEO_3" allowfullscreen></iframe>
+                <div class="video-content">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZJv_4sx5Ym/" data-instgrm-version="14" style="width: 100%; min-width: 100%; margin: 0 !important;"></blockquote>
                 </div>
-                <div class="video-info">
-                    <h3>Podcast Highlight Clip</h3>
-                    <p>חיתוך רגע שיא מתוך פודקאסט, זומים דינמיים ואנימציית טקסט קלה.</p>
+                <div class="card-details">
+                    <span class="stats-badge">🍰 Business & Social Proof</span>
+                    <h3>Authentic Reaction & Food Reel</h3>
+                    <p>Dynamic cuts capturing authentic customer reactions and appetizing visuals.</p>
                 </div>
             </div>
 
+            <!-- Video 4: Audience Focused -->
             <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="LINK_TO_VIDEO_4" allowfullscreen></iframe>
+                <div class="video-content">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNSTSJ2Mnry/" data-instgrm-version="14" style="width: 100%; min-width: 100%; margin: 0 !important;"></blockquote>
                 </div>
-                <div class="video-info">
-                    <h3>Fitness Studio Workout Tips</h3>
-                    <p>עריכת קליפ קצבי עם אפקטים ומעברים מהירים.</p>
+                <div class="card-details">
+                    <span class="stats-badge">✨ 500+ Likes | 135 Comments</span>
+                    <h3>Audience-Centric Brand Content</h3>
+                    <p>Seamless pacing, clean subtitles, and native social storytelling.</p>
+                </div>
+            </div>
+
+            <!-- Video 5: Google Drive Cut -->
+            <div class="video-card">
+                <div class="video-content" style="min-height: auto;">
+                    <div class="video-wrapper-drive">
+                        <iframe src="https://drive.google.com/file/d/14prlTDh8AIiP2Uxem8uNnjHa0QYrJk5S/preview" allow="autoplay"></iframe>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <span class="stats-badge">🎬 Dynamic Editing Demo</span>
+                    <h3>Creative Editing & Storytelling</h3>
+                    <p>Showcasing tight cuts, zoom transitions, sound effects, and custom captions.</p>
                 </div>
             </div>
 
         </main>
 
         <footer>
-            <p>אהבת את מה שראית? בואו נדבר על הפרויקט שלכם.</p>
-            <a href="https://wa.me/972XXXXXXXXX" class="contact-btn">שליחת הודעה בוואטסאפ</a>
-        </main>
+            <h3>Ready to elevate your video content?</h3>
+            <p>Available for freelance video editing, short-form campaigns, and podcasts.</p>
+            <a href="https://wa.me/972544498497" class="contact-btn">Let's Talk on WhatsApp</a>
+        </footer>
     </div>
 
+    <!-- Official Instagram Embed Script -->
+    <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
