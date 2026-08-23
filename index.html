@@ -69,32 +69,18 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         }
 
-        /* Container that displays only the video & profile while clipping stats */
-        .instagram-clean-frame {
+        .video-wrapper-drive {
             position: relative;
             width: 100%;
-            height: 520px;
-            overflow: hidden;
+            padding-bottom: 177.77%; /* 9:16 aspect ratio */
+            height: 0;
             background: #000;
         }
 
-        .instagram-clean-frame iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
+        .video-wrapper-drive iframe {
             position: absolute;
             top: 0;
             left: 0;
-        }
-
-        .drive-frame {
-            position: relative;
-            width: 100%;
-            height: 520px;
-            background: #000;
-        }
-
-        .drive-frame iframe {
             width: 100%;
             height: 100%;
             border: none;
@@ -161,7 +147,6 @@
         @media (max-width: 600px) {
             header h1 { font-size: 2.2rem; }
             .video-grid { grid-template-columns: 1fr; }
-            .instagram-clean-frame, .drive-frame { height: 480px; }
         }
     </style>
 </head>
@@ -175,49 +160,34 @@
 
         <main class="video-grid">
 
-            <!-- Video 1: Dr. Ron Fishel -->
+            <!-- Video 1: Dr. Ron Fishel (Drive Video Player) -->
             <div class="video-card">
-                <div class="instagram-clean-frame">
-                    <iframe src="https://www.instagram.com/reel/DbaG7c7MUxs/embed/" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
+                <div class="video-wrapper-drive">
+                    <iframe src="https://drive.google.com/file/d/1IrnjRkh9feJ6J6-a3sDJDoW4liRVNOEs/preview" allow="autoplay; fullscreen"></iframe>
                 </div>
                 <div class="video-footer">
-                    <a href="https://www.instagram.com/reel/DbaG7c7MUxs/" target="_blank" class="ig-link-btn">View Original Reel on Instagram ↗</a>
+                    <a href="https://www.instagram.com/reel/DbaG7c7MUxs/" target="_blank" class="ig-link-btn">View Original on Instagram ↗</a>
                 </div>
             </div>
 
             <!-- Video 2: Dana Kanners -->
             <div class="video-card">
-                <div class="instagram-clean-frame">
-                    <iframe src="https://www.instagram.com/reel/DQHTUxtCNID/embed/" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-                </div>
-                <div class="video-footer">
-                    <a href="https://www.instagram.com/reel/DQHTUxtCNID/" target="_blank" class="ig-link-btn">View Original Reel on Instagram ↗</a>
-                </div>
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQHTUxtCNID/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
             </div>
 
             <!-- Video 3: Nougatine Bakery -->
             <div class="video-card">
-                <div class="instagram-clean-frame">
-                    <iframe src="https://www.instagram.com/reel/DZJv_4sx5Ym/embed/" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-                </div>
-                <div class="video-footer">
-                    <a href="https://www.instagram.com/reel/DZJv_4sx5Ym/" target="_blank" class="ig-link-btn">View Original Reel on Instagram ↗</a>
-                </div>
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZJv_4sx5Ym/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
             </div>
 
             <!-- Video 4: Social Reel -->
             <div class="video-card">
-                <div class="instagram-clean-frame">
-                    <iframe src="https://www.instagram.com/reel/DNSTSJ2Mnry/embed/" allowtransparency="true" allowfullscreen="true" scrolling="no"></iframe>
-                </div>
-                <div class="video-footer">
-                    <a href="https://www.instagram.com/reel/DNSTSJ2Mnry/" target="_blank" class="ig-link-btn">View Original Reel on Instagram ↗</a>
-                </div>
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNSTSJ2Mnry/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
             </div>
 
-            <!-- Video 5: Portfolio Reel (Drive) -->
+            <!-- Video 5: Portfolio Showcase (Drive) -->
             <div class="video-card">
-                <div class="drive-frame">
+                <div class="video-wrapper-drive">
                     <iframe src="https://drive.google.com/file/d/14prlTDh8AIiP2Uxem8uNnjHa0QYrJk5S/preview" allow="autoplay; fullscreen"></iframe>
                 </div>
                 <div class="video-footer">
@@ -234,5 +204,7 @@
         </footer>
     </div>
 
+    <!-- Official Instagram Script -->
+    <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
