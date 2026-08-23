@@ -11,6 +11,7 @@
             --text-main: #ffffff;
             --text-muted: #8b949e;
             --accent: #66fcf1;
+            --tag-bg: rgba(102, 252, 241, 0.12);
         }
 
         * {
@@ -23,74 +24,96 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            padding: 3rem 1rem;
-            line-height: 1.6;
+            padding: 2.5rem 1rem;
+            line-height: 1.5;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1050px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2.5rem;
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             letter-spacing: -0.5px;
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
         }
 
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            align-items: start;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            align-items: stretch;
+            margin-bottom: 3.5rem;
         }
 
         .video-card {
             background-color: var(--card-bg);
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.08);
             display: flex;
             flex-direction: column;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
-        .video-wrapper-drive {
+        /* Compact 9:16 responsive video box */
+        .video-frame {
             position: relative;
             width: 100%;
-            padding-bottom: 177.77%; /* 9:16 aspect ratio */
-            height: 0;
+            height: 440px;
             background: #000;
         }
 
-        .video-wrapper-drive iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .video-frame iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
 
+        .card-details {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            flex-grow: 1;
+        }
+
+        .stats-badge {
+            display: inline-block;
+            align-self: flex-start;
+            background-color: var(--tag-bg);
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.2rem 0.65rem;
+            border-radius: 50px;
+        }
+
+        .card-details h3 {
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
         .video-footer {
-            padding: 0.85rem;
+            padding: 0.75rem 1rem;
             background-color: #12161c;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -99,9 +122,6 @@
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
             transition: opacity 0.2s;
         }
 
@@ -113,18 +133,18 @@
         footer {
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 3rem;
-            margin-top: 2rem;
+            padding-top: 2.5rem;
+            margin-top: 1.5rem;
         }
 
         footer h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            margin-bottom: 0.4rem;
         }
 
         footer p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .contact-btn {
@@ -132,11 +152,11 @@
             background-color: var(--accent);
             color: #0b0c10;
             text-decoration: none;
-            padding: 0.85rem 2.2rem;
+            padding: 0.8rem 2rem;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1rem;
-            margin-top: 1.2rem;
+            font-size: 0.95rem;
+            margin-top: 1rem;
             transition: opacity 0.2s;
         }
 
@@ -145,8 +165,9 @@
         }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 2.2rem; }
+            header h1 { font-size: 2rem; }
             .video-grid { grid-template-columns: 1fr; }
+            .video-frame { height: 480px; }
         }
     </style>
 </head>
@@ -160,38 +181,73 @@
 
         <main class="video-grid">
 
-            <!-- Video 1: Dr. Ron Fishel (Drive Video Player) -->
+            <!-- Video 1: Dr. Ron Fishel (80K Views) -->
             <div class="video-card">
-                <div class="video-wrapper-drive">
+                <div class="video-frame">
                     <iframe src="https://drive.google.com/file/d/1IrnjRkh9feJ6J6-a3sDJDoW4liRVNOEs/preview" allow="autoplay; fullscreen"></iframe>
                 </div>
+                <div class="card-details">
+                    <span class="stats-badge">🔥 80,000+ Views</span>
+                    <h3>Viral Short-Form Reel</h3>
+                </div>
                 <div class="video-footer">
-                    <a href="https://www.instagram.com/reel/DbaG7c7MUxs/" target="_blank" class="ig-link-btn">View Original on Instagram ↗</a>
+                    <a href="https://www.instagram.com/reel/DbaG7c7MUxs/" target="_blank" class="ig-link-btn">View on Instagram ↗</a>
                 </div>
             </div>
 
-            <!-- Video 2: Dana Kanners -->
+            <!-- Video 2: Dana Kanners (High Engagement) -->
             <div class="video-card">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQHTUxtCNID/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
+                <div class="video-frame">
+                    <iframe src="https://drive.google.com/file/d/1AlqW2iXpTWXPfWdHpPAfV_wh0JbggizN/preview" allow="autoplay; fullscreen"></iframe>
+                </div>
+                <div class="card-details">
+                    <span class="stats-badge">💬 1,480+ Likes · 1,400+ Comments</span>
+                    <h3>Product & Brand Ad</h3>
+                </div>
+                <div class="video-footer">
+                    <a href="https://www.instagram.com/reel/DQHTUxtCNID/" target="_blank" class="ig-link-btn">View on Instagram ↗</a>
+                </div>
             </div>
 
-            <!-- Video 3: Nougatine Bakery -->
+            <!-- Video 3: Oren Uzan (Community & Engagement) -->
             <div class="video-card">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZJv_4sx5Ym/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
+                <div class="video-frame">
+                    <iframe src="https://drive.google.com/file/d/1vRJeGfhkOzJKSf9Qjp1kFPzZSbrqvuLK/preview" allow="autoplay; fullscreen"></iframe>
+                </div>
+                <div class="card-details">
+                    <span class="stats-badge">✨ 500+ Likes · 135 Comments</span>
+                    <h3>Personal Brand & Social Reel</h3>
+                </div>
+                <div class="video-footer">
+                    <a href="https://www.instagram.com/reel/DNSTSJ2Mnry/" target="_blank" class="ig-link-btn">View on Instagram ↗</a>
+                </div>
             </div>
 
-            <!-- Video 4: Social Reel -->
+            <!-- Video 4: Nougatine Bakery (Taste Reaction) -->
             <div class="video-card">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNSTSJ2Mnry/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
+                <div class="video-frame">
+                    <iframe src="https://drive.google.com/file/d/1kjFY9iSGGekG_AgWJVHetbl0tBhm27i5/preview" allow="autoplay; fullscreen"></iframe>
+                </div>
+                <div class="card-details">
+                    <span class="stats-badge">🍰 Business Showcase</span>
+                    <h3>Customer Reaction & Dynamic Cut</h3>
+                </div>
+                <div class="video-footer">
+                    <a href="https://www.instagram.com/reel/DZJv_4sx5Ym/" target="_blank" class="ig-link-btn">View on Instagram ↗</a>
+                </div>
             </div>
 
-            <!-- Video 5: Portfolio Showcase (Drive) -->
+            <!-- Video 5: Editing Capabilities Showcase -->
             <div class="video-card">
-                <div class="video-wrapper-drive">
+                <div class="video-frame">
                     <iframe src="https://drive.google.com/file/d/14prlTDh8AIiP2Uxem8uNnjHa0QYrJk5S/preview" allow="autoplay; fullscreen"></iframe>
                 </div>
+                <div class="card-details">
+                    <span class="stats-badge">🎬 Editing Showcase</span>
+                    <h3>Visual Dynamics & Custom Captions</h3>
+                </div>
                 <div class="video-footer">
-                    <span style="color: var(--text-muted); font-size: 0.85rem;">Portfolio Showcase Reel</span>
+                    <span style="color: var(--text-muted); font-size: 0.85rem;">Portfolio Showcase</span>
                 </div>
             </div>
 
@@ -204,7 +260,5 @@
         </footer>
     </div>
 
-    <!-- Official Instagram Script -->
-    <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>
