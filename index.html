@@ -70,49 +70,46 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
-        /* Compact 9:16 responsive video box */
+        /* 9:16 Aspect Ratio Container */
         .video-frame {
             position: relative;
             width: 100%;
-            height: 440px;
+            padding-bottom: 177.77%;
+            height: 0;
             background: #000;
         }
 
         .video-frame iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             border: none;
         }
 
         .card-details {
-            padding: 1rem;
+            padding: 0.85rem 1rem;
             display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
+            align-items: center;
             flex-grow: 1;
         }
 
         .stats-badge {
             display: inline-block;
-            align-self: flex-start;
             background-color: var(--tag-bg);
             color: var(--accent);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            padding: 0.2rem 0.65rem;
+            padding: 0.3rem 0.75rem;
             border-radius: 50px;
-        }
-
-        .card-details h3 {
-            font-size: 1.05rem;
-            color: var(--text-main);
         }
 
         .video-footer {
             padding: 0.75rem 1rem;
             background-color: #12161c;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -167,7 +164,6 @@
         @media (max-width: 600px) {
             header h1 { font-size: 2rem; }
             .video-grid { grid-template-columns: 1fr; }
-            .video-frame { height: 480px; }
         }
     </style>
 </head>
@@ -181,73 +177,55 @@
 
         <main class="video-grid">
 
-            <!-- Video 1: Dr. Ron Fishel (80K Views) -->
+            <!-- Video 1: Dr. Ron Fishel -->
             <div class="video-card">
                 <div class="video-frame">
-                    <iframe src="https://drive.google.com/file/d/1IrnjRkh9feJ6J6-a3sDJDoW4liRVNOEs/preview" allow="autoplay; fullscreen"></iframe>
+                    <iframe src="https://www.youtube-nocookie.com/embed/DWeye33KYHk?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="card-details">
                     <span class="stats-badge">🔥 80,000+ Views</span>
-                    <h3>Viral Short-Form Reel</h3>
                 </div>
                 <div class="video-footer">
                     <a href="https://www.instagram.com/reel/DbaG7c7MUxs/" target="_blank" class="ig-link-btn">View on Instagram ↗</a>
                 </div>
             </div>
 
-            <!-- Video 2: Dana Kanners (High Engagement) -->
+            <!-- Video 2: Dana Kanners -->
             <div class="video-card">
                 <div class="video-frame">
-                    <iframe src="https://drive.google.com/file/d/1AlqW2iXpTWXPfWdHpPAfV_wh0JbggizN/preview" allow="autoplay; fullscreen"></iframe>
+                    <iframe src="https://www.youtube-nocookie.com/embed/hQlK7ZohHMs?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="card-details">
                     <span class="stats-badge">💬 1,480+ Likes · 1,400+ Comments</span>
-                    <h3>Product & Brand Ad</h3>
                 </div>
                 <div class="video-footer">
                     <a href="https://www.instagram.com/reel/DQHTUxtCNID/" target="_blank" class="ig-link-btn">View on Instagram ↗</a>
                 </div>
             </div>
 
-            <!-- Video 3: Oren Uzan (Community & Engagement) -->
+            <!-- Video 3: Oren Uzan -->
             <div class="video-card">
                 <div class="video-frame">
-                    <iframe src="https://drive.google.com/file/d/1vRJeGfhkOzJKSf9Qjp1kFPzZSbrqvuLK/preview" allow="autoplay; fullscreen"></iframe>
+                    <iframe src="https://www.youtube-nocookie.com/embed/sa_f3EFhsAk?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="card-details">
                     <span class="stats-badge">✨ 500+ Likes · 135 Comments</span>
-                    <h3>Personal Brand & Social Reel</h3>
                 </div>
                 <div class="video-footer">
                     <a href="https://www.instagram.com/reel/DNSTSJ2Mnry/" target="_blank" class="ig-link-btn">View on Instagram ↗</a>
                 </div>
             </div>
 
-            <!-- Video 4: Nougatine Bakery (Taste Reaction) -->
+            <!-- Video 4: Nougatine Bakery -->
             <div class="video-card">
                 <div class="video-frame">
-                    <iframe src="https://drive.google.com/file/d/1kjFY9iSGGekG_AgWJVHetbl0tBhm27i5/preview" allow="autoplay; fullscreen"></iframe>
+                    <iframe src="https://www.youtube-nocookie.com/embed/7cx7FdziYAY?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="card-details">
                     <span class="stats-badge">🍰 Business Showcase</span>
-                    <h3>Customer Reaction & Dynamic Cut</h3>
                 </div>
                 <div class="video-footer">
                     <a href="https://www.instagram.com/reel/DZJv_4sx5Ym/" target="_blank" class="ig-link-btn">View on Instagram ↗</a>
-                </div>
-            </div>
-
-            <!-- Video 5: Editing Capabilities Showcase -->
-            <div class="video-card">
-                <div class="video-frame">
-                    <iframe src="https://drive.google.com/file/d/14prlTDh8AIiP2Uxem8uNnjHa0QYrJk5S/preview" allow="autoplay; fullscreen"></iframe>
-                </div>
-                <div class="card-details">
-                    <span class="stats-badge">🎬 Editing Showcase</span>
-                    <h3>Visual Dynamics & Custom Captions</h3>
-                </div>
-                <div class="video-footer">
-                    <span style="color: var(--text-muted); font-size: 0.85rem;">Portfolio Showcase</span>
                 </div>
             </div>
 
