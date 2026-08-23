@@ -67,14 +67,17 @@
             display: flex;
             justify-content: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            padding: 0.5rem;
         }
 
         .video-wrapper-drive {
             position: relative;
             width: 100%;
-            padding-bottom: 177.77%; /* 9:16 vertical */
+            padding-bottom: 177.77%;
             height: 0;
             background: #000;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         .video-wrapper-drive iframe {
@@ -136,30 +139,30 @@
 
         <main class="video-grid">
 
-            <!-- Video 1 -->
+            <!-- Video 1: Dr. Fishel Ron -->
             <div class="video-card">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbaG7c7MUxs/" data-instgrm-version="14" style="width: 100%; min-width: 100%; margin: 0 !important;"></blockquote>
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DbaG7c7MUxs/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
             </div>
 
-            <!-- Video 2 -->
+            <!-- Video 2: Dana Kanners -->
             <div class="video-card">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQHTUxtCNID/" data-instgrm-version="14" style="width: 100%; min-width: 100%; margin: 0 !important;"></blockquote>
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQHTUxtCNID/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
             </div>
 
-            <!-- Video 3 -->
+            <!-- Video 3: Nougatine / Food Reel -->
             <div class="video-card">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZJv_4sx5Ym/" data-instgrm-version="14" style="width: 100%; min-width: 100%; margin: 0 !important;"></blockquote>
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DZJv_4sx5Ym/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
             </div>
 
-            <!-- Video 4 -->
+            <!-- Video 4: Social / Podcast Reel -->
             <div class="video-card">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNSTSJ2Mnry/" data-instgrm-version="14" style="width: 100%; min-width: 100%; margin: 0 !important;"></blockquote>
+                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNSTSJ2Mnry/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; width:100%; min-width:300px; padding:0;"></blockquote>
             </div>
 
             <!-- Video 5: Google Drive -->
             <div class="video-card" style="width: 100%;">
                 <div class="video-wrapper-drive">
-                    <iframe src="https://drive.google.com/file/d/14prlTDh8AIiP2Uxem8uNnjHa0QYrJk5S/preview" allow="autoplay"></iframe>
+                    <iframe src="https://drive.google.com/file/d/14prlTDh8AIiP2Uxem8uNnjHa0QYrJk5S/preview" allow="autoplay; fullscreen"></iframe>
                 </div>
             </div>
 
@@ -172,7 +175,14 @@
         </footer>
     </div>
 
-    <!-- Official Instagram Embed Script -->
+    <!-- Official Instagram Script with Force Process -->
     <script async src="//www.instagram.com/embed.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            if (window.instgrm) {
+                window.instgrm.Embeds.process();
+            }
+        });
+    </script>
 </body>
 </html>
