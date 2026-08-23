@@ -33,13 +33,13 @@
         }
 
         .container {
-            max-width: 1050px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
 
         header h1 {
@@ -56,11 +56,12 @@
             margin: 0 auto;
         }
 
+        /* Responsive 3-Column Grid */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
-            align-items: stretch;
+            justify-content: center;
             margin-bottom: 3rem;
         }
 
@@ -72,17 +73,23 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            max-width: 320px;
+            margin: 0 auto;
+            width: 100%;
         }
 
-        /* 9:16 Video Frame */
+        /* Strict 9:16 Aspect Ratio - Eliminates Side Borders */
         .video-frame {
             position: relative;
             width: 100%;
-            height: 460px;
+            aspect-ratio: 9 / 16;
             background: #000;
         }
 
         .video-frame iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             border: none;
@@ -192,7 +199,7 @@
         @media (max-width: 600px) {
             header h1 { font-size: 1.85rem; }
             .video-grid { grid-template-columns: 1fr; }
-            .video-frame { height: 490px; }
+            .video-card { max-width: 340px; }
             .floating-wa { bottom: 18px; right: 18px; width: 48px; height: 48px; }
         }
     </style>
@@ -278,12 +285,12 @@
         <footer>
             <h3>Looking for a Video Editor?</h3>
             <p>Need more samples, different formats, or a custom project?</p>
-            <a href="https://wa.me/972544498397?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%9E%D7%A8%D7%99%D7%AA%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%AA%D7%99%D7%A2%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A2%D7%A8%D7%99%D7%9B%D7%AA%20%D7%95%D7%99%D7%93%D7%90%D7%95%20%28%3A" class="contact-btn">Let's Talk on WhatsApp</a>
+            <a href="https://wa.me/972544498397?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%9E%D7%A8%D7%99%D7%AA%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%AA%D7%99%D7%A7%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A2%D7%A8%D7%99%D7%9B%D7%AA%20%D7%95%D7%99%D7%93%D7%90%D7%95%20%28%3A" class="contact-btn">Let's Talk on WhatsApp</a>
         </footer>
     </div>
 
     <!-- Floating WhatsApp Icon -->
-    <a href="https://wa.me/972544498397?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%9E%D7%A8%D7%99%D7%AA%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%AA%D7%99%D7%A2%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A2%D7%A8%D7%99%D7%9B%D7%AA%20%D7%95%D7%99%D7%93%D7%90%D7%95%20%28%3A" class="floating-wa" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/972544498397?text=%D7%94%D7%99%D7%99%20%D7%A9%D7%9E%D7%A8%D7%99%D7%AA%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%93%D7%A8%D7%9A%20%D7%94%D7%AA%D7%99%D7%A7%20%D7%A2%D7%91%D7%95%D7%93%D7%95%D7%AA%20%D7%A9%D7%9C%D7%9A%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A2%D7%A8%D7%99%D7%9B%D7%AA%20%D7%95%D7%99%D7%93%D7%90%D7%95%20%28%3A" class="floating-wa" target="_blank" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 32 32">
             <path d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.652.766 5.127 2.086 7.221L2.62 30.08l7.07-1.928A13.435 13.435 0 0016 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm7.886 19.086c-.328.924-1.637 1.706-2.673 1.93-.71.152-1.635.275-4.757-1.02-3.987-1.654-6.554-5.717-6.753-5.98-.198-.264-1.614-2.148-1.614-4.1 0-1.95 1.022-2.91 1.385-3.307.363-.396.792-.495 1.056-.495.264 0 .528.002.759.014.244.012.571-.092.893.68.33.792 1.122 2.738 1.221 2.937.099.198.165.43.033.693-.132.264-.198.43-.396.66-.198.231-.418.515-.597.692-.198.198-.405.414-.174.81.231.396 1.027 1.694 2.203 2.742 1.512 1.348 2.784 1.766 3.18 1.964.396.198.627.165.858-.099.231-.264.99-1.155 1.254-1.55.264-.396.528-.33.891-.198.363.132 2.31 1.09 2.706 1.288.396.198.66.297.759.462.099.165.099.957-.229 1.881z"/>
         </svg>
